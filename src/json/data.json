@@ -1,0 +1,114 @@
+[
+  {
+    "pair": "NEO / BTC",
+    "last_price_base": 27.88,
+    "day_change": 0.64,
+    "day_high": 0.004944,
+    "day_low": 0.004944,
+    "volume": 1523.00025600
+  },
+  {
+    "pair": "WTC / BTC",
+    "last_price_base": 6.09,
+    "day_change": -0.65,
+    "day_high": 0.00108002,
+    "day_low": 0.00108002,
+    "volume": 886.80700045
+  },
+  {
+    "pair": "ETH / BTC",
+    "last_price_base": 301.94,
+    "day_change": 26.10,
+    "day_high": 0.053535,
+    "day_low": 0.053535,
+    "volume": 2357.15054783
+  },
+  {
+    "pair": "LINK / BTC",
+    "last_price_base": 0.45,
+    "day_change": -0.73,
+    "day_high": 0.00007932,
+    "day_low": 0.00007932,
+    "volume": 372.83203253
+  },
+  {
+    "pair": "BNB / BTC",
+    "last_price_base": 1.35,
+    "day_change": -25.15,
+    "day_high": 0.00023999,
+    "day_low": 0.00023999,
+    "volume": 1523.00025600
+  },
+  {
+    "pair": "LTC / BTC",
+    "last_price_base": 57.44,
+    "day_change": 15.09,
+    "day_high": 0.010185,
+    "day_low": 0.010185,
+    "volume": 1523.00025600
+  },
+  {
+    "pair": "QTUM / BTC",
+    "last_price_base": 10.16,
+    "day_change": -25.15,
+    "day_high": 0.001802,
+    "day_low": 0.001802,
+    "volume": 1523.00025600
+  },
+  {
+    "pair": "BCC / BTC",
+    "last_price_base": 305.44,
+    "day_change": -25.15,
+    "day_high": 0.054156,
+    "day_low": 0.054156,
+    "volume": 886.80700045
+  },
+  {
+    "pair": "OMG / BTC",
+    "last_price_base": 8.17,
+    "day_change": -10.10,
+    "day_high": 0.001448,
+    "day_low": 0.001448,
+    "volume": 2357.15054783
+  },
+  {
+    "pair": "KNC / BTC",
+    "last_price_base": 1.13,
+    "day_change": -15.89,
+    "day_high": 0.00019967,
+    "day_low": 0.00019967,
+    "volume": 372.83203253
+  },
+  {
+    "pair": "MCO / BTC",
+    "last_price_base": 6.93,
+    "day_change": -9.00,
+    "day_high": 0.001229,
+    "day_low": 0.001229,
+    "volume": 1523.00025600
+  },
+  {
+    "pair": "EOS / BTC",
+    "last_price_base": 0.59,
+    "day_change": -21.58,
+    "day_high": 0.00010425,
+    "day_low": 0.00010425,
+    "volume": 1523.00025600
+  },
+  {
+    "pair": "SALT / BTC",
+    "last_price_base": 3.03,
+    "day_change": -25.15,
+    "day_high": 0.000537,
+    "day_low": 0.000537,
+    "volume": 372.83203253
+  },
+  {
+    "pair": "IOTA / BTC",
+    "last_price_base": 0.43,
+    "day_change": -20.10,
+    "day_high": 0.00007679,
+    "day_low": 0.00007679,
+    "volume": 1523.00025600
+  }
+]

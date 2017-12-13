@@ -1,0 +1,53 @@
+<header class="item-header">
+  <div class="main-content">
+    <div class="left-group">
+      <a href="/">
+        <i class="material-icons icon-navigate-before">navigate_before</i>
+      </a>
+      <span class="app-item-header-name">{{itemCtrl.selectedItem.name}}</span>
+    </div>
+    <div class="right-group">
+      <a href="/">
+        <i class="material-icons">search</i>
+      </a>
+      <a href="/">
+        <i class="material-icons">backup</i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="app-item-detail-container">
+  <div class="app-item-detail-image-container">
+    <img class="app-item-detail-image" ng-src="{{itemCtrl.selectedItem.image}}" alt="{{itemCtrl.selectedItem.name}}">
+  </div>
+  <div class="app-item-detail-intro-container">
+    <h3 class="app-item-detail-title">{{itemCtrl.selectedItem.name}}</h3>
+    <a class="app-item-detail-cta like-count-cta" href="#">
+      <i class="material-icons">favorite_border</i>
+      <span>いいね！</span>
+    </a>
+    <span class="like-count-number">{{itemCtrl.selectedItem.like_count}}</span>
+    <a class="app-item-detail-cta comment-cta" href="#">
+      <i class="material-icons">comment</i>
+      <span>コメント</span>
+    </a>
+    <div class="flag-group">
+      <a href="/" class="flag-cta">
+        <i class="material-icons">flag</i>
+      </a>
+    </div>
+  </div>
+  <div class="app-item-detail-description-container">
+    <h4 class="description-title">商品の説明</h4>
+    <p class="description-content">{{itemCtrl.selectedItem.description}}</p>
+  </div>
+</section>
+
+<footer class="app-footer main-content">
+  <div class="app-footer-inner">
+    <span class="footer-price">{{itemCtrl.dataService.getStyledPrice(itemCtrl.selectedItem.price)}}</span>
+    <span class="footer-shipping-fee">{{itemCtrl.selectedItem.shippingFee}}</span>
+    <a class="footer-cta" href="#">購入手続きへ</a>
+  </div>
+</footer>

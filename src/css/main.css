@@ -1,0 +1,176 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-smooth: auto;
+  font-family: 'Arial',"Microsoft YaHei", sans-serif;
+  background-color: #1a1a1a;
+  color: #333;
+  font-size: 13px;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #bcbcbc;
+  text-decoration: none;
+}
+
+a:hover {
+  transform: opacity .5 linear;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.binance-theme {
+  color: #e8b342;
+}
+
+.binance-logo {
+  display: inline-block;
+  float: left;
+  padding: 8px 25px 5px;
+}
+
+.exchange-item {
+  position: relative;
+}
+
+.exchange-item:before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/exchange-icon.png);
+  left: -24px;
+  height: 17px;
+  width: 17px;
+}
+
+.binance-cols:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.binance-header {
+  background-color: #3c3c3c;
+  color: #b1b1b1;
+}
+
+.binance-promo {
+  text-align: center;
+}
+
+.binance-promo .promo-signup {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+.binance-promo .promo-signup li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.binance-advertisement-item {
+  float: left;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.binance-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.binance-news-panel {
+  background-color: #262626;
+}
+
+.binance-news-panel .news-item {
+  float: left;
+  display: inline-block;
+  width: 33.3%;
+}
+
+.exchange-data-panel,
+.exchange-category-panel {
+  padding: 0;
+  margin: 0;
+}
+
+.exchange-data-panel {
+  border: 1px solid #e6e6e6;
+  padding: 15px;
+  width: 100%;
+  top: -1px;
+  position: relative;
+}
+
+.exchange-data-panel th {
+  text-align: left;
+  color: #a0a0a0;
+}
+
+.day-change-positive {
+  color: #83b422;
+}
+
+.day-change-negative {
+  color: #ea0070;
+}
+
+.binance-exchange-panel {
+  background-color: #f7f7f7;
+  padding: 30px 20px;
+}
+
+.category-item {
+  display: inline-block;
+  padding: 10px 15px;
+  border-left: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  cursor: pointer;
+}
+
+.category-item.active {
+  font-weight: 600;
+  border-bottom: 1px solid #f7f7f7;
+  z-index: 10;
+  position: relative;
+}
+
+.category-item:last-child {
+  border-right: 1px solid #e6e6e6;
+}
+
+.left-nav,
+.right-nav {
+  display: inline-block;
+}
+
+.left-nav {
+  float: left;
+}
+
+.right-nav {
+  float: right;
+}
+
+.right-nav li {
+  float: left;
+  padding: 0 10px;
+}

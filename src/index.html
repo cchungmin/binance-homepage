@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja-JP" ng-app="app">
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binance</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Mercari Test App">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mercari Test App">
+    <meta name="theme-color" content="#2F3BA2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-cloak>
+    <header class="binance-header">
+      <a href="" class="binance-logo">
+        <img src="images/logo.png" alt="binance-logo-image">
+      </a>
+      <nav class="binance-cols">
+        <ul class="left-nav">
+          <li class="exchange-item">
+            <a href="#">Exchange</a>
+          </li>
+        </ul>
+        <ul class="right-nav navigation">
+          <li>
+            <a href="#">Join us</a>
+          </li>
+          <li>
+            <a href="#">Support</a>
+          </li>
+          <li>
+            <a href="#">News</a>
+          </li>
+          <li>
+            <a href="">Login</a> or
+          </li>
+          <li class="sign-up">
+            <a href="">Rigister</a>
+          </li>
+          <li class="locale">
+            <a href="#">
+              <img src="images/locale.png" alt="locale">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="binance-promo binance-main-content">
+        <h2 class="binance-main-title binance-theme">Binance - Exchange The World</h2>
+        <ul class="promo-signup">
+          <li>
+            <a href="#">Create Account</a>
+          </li>
+          <li>
+            Already registered? <a href="#">Login</a>
+          </li>
+        </ul>
+        <ul class="binance-cols">
+          <li class="binance-advertisement-item">
+            <a href="">
+              <img src="images/banner-1.png" alt="banner-1">
+            </a>
+          </li>
+          <li class="binance-advertisement-item">
+            <a href="">
+              <img src="images/banner-2.png" alt="banner-2">
+            </a>
+          </li>
+          <li class="binance-advertisement-item">
+            <a href="">
+              <img src="images/banner-3.png" alt="banner-3">
+            </a>
+          </li>
+          <li class="binance-advertisement-item">
+            <a href="">
+              <img src="images/banner-4.png" alt="banner-4">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="binance-news-panel">
+        <div class="binance-main-content">
+          <ul class="binance-cols">
+            <li class="news-item"><a href="">Binance Adds DNT/BTC Trading Pair      (10-16)</a></li>
+            <li class="news-item"><a href="">Binance Coin Burn in 2017 Fall      (10-12)</a></li>
+            <li class="news-item"><a href="">SUB Purchases Leaderboard Reward ...       (9-25)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="binance-exchange-panel">
+        <div class="binance-main-content" ng-controller="MainCtrl as mainCtrl">
+          <ul class="exchange-category-panel">
+            <li category-item="{{category}}" ng-class="mainCtrl.selectedCategory === category ? 'binance-theme active': ''" class="category-item" ng-repeat="category in mainCtrl.categories track by $index">
+              {{category}} {{mainCtrl.selectedCategory}}
+            </li>
+          </ul>
+          <table class="exchange-data-panel">
+            <thead>
+              <tr>
+                <th>Pair</th>
+                <th>Last Price</th>
+                <th>24 Change</th>
+                <th>24 High</th>
+                <th>24 Low</th>
+                <th>Volume</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data-item" ng-repeat="item in mainCtrl.items track by $index">
+                <td>{{item.pair}}</td>
+                <td>{{item.day_high}} / {{mainCtrl.dataService.lastPriceBaseFormatter(item.last_price_base)}}</td>
+                <td ng-class="item.day_change > 0 ? 'day-change-positive' : 'day-change-negative'">{{mainCtrl.dataService.dayChangeFormatter(item.day_change)}}%</td>
+                <td>{{item.day_high}}</td>
+                <td>{{item.day_low}}</td>
+                <td>{{mainCtrl.dataService.volumeFormatter(item.volume)}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer class="binance-footer binance-cols">
+
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
+    <!-- build:js js/main.min.js -->
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
