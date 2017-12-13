@@ -1,10 +1,8 @@
-# mercari-skill-test
+# binance-homepage
 
 ## Project Brief
-This project is written for Mercari, using [Angular 1.x](https://angularjs.org) with [Material Icons](https://material.io/icons). Check [more](/NOTE.md) here.
-
-This project used some gulp setting sparked from with [Web Starter Kit](https://github.com/google/web-starter-kit).
-
+This project is written for Binance, Check [more](/NOTE.md) here.
+This project used some gulp settings sparked from with [Web Starter Kit](https://github.com/google/web-starter-kit).
 Below you will find some information on how to perform common tasks.<br>
 
 ## Contribution
