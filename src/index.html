@@ -57,10 +57,16 @@
         <h2 class="binance-main-title binance-theme">Binance - Exchange The World</h2>
         <ul class="promo-signup">
           <li>
-            <a href="#">Create Account</a>
+            <a href="#">
+              <span class="highlighted">Create Account</span>
+            </a>
           </li>
+          <span class="highlighted">|</span>
           <li>
-            Already registered? <a href="#">Login</a>
+            Already registered?
+            <a href="#">
+              <span class="highlighted">Login</span>
+            </a>
           </li>
         </ul>
         <ul class="binance-cols">
@@ -98,15 +104,17 @@
       <div class="binance-exchange-panel">
         <div class="binance-main-content" ng-controller="MainCtrl as mainCtrl">
           <ul class="exchange-category-panel">
-            <li category-item="{{category}}" ng-class="mainCtrl.selectedCategory === category ? 'binance-theme active': ''" class="category-item" ng-repeat="category in mainCtrl.categories track by $index">
-              {{category}} {{mainCtrl.selectedCategory}}
+            <li ng-click="mainCtrl.setSelectedCategory(category)" ng-class="mainCtrl.selectedCategory === category ? 'binance-theme active': ''" class="category-item" ng-repeat="category in mainCtrl.categories track by $index">
+              {{category}}
             </li>
           </ul>
+          <input class="binance-keyword" ng-model="mainCtrl.keyword" type="text">
           <table class="exchange-data-panel">
             <thead>
               <tr>
-                <th>Pair</th>
-                <th>Last Price</th>
+                <th></th>
+                <th class="pair-cell">Pair</th>
+                <th class="last-price-cell">Last Price</th>
                 <th>24 Change</th>
                 <th>24 High</th>
                 <th>24 Low</th>
@@ -114,9 +122,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="data-item" ng-repeat="item in mainCtrl.items track by $index">
-                <td>{{item.pair}}</td>
-                <td>{{item.day_high}} / {{mainCtrl.dataService.lastPriceBaseFormatter(item.last_price_base)}}</td>
+              <tr class="data-item" ng-repeat="item in mainCtrl.items track by $index" ng-click="mainCtrl.select">
+                <td>
+                  <i class="icon-star" ng-click="mainCtrl.setFavoriteItem(item);" ng-class="mainCtrl.favorites.includes(item) ? 'gold-star' : 'grey-star'"></i>
+                </td>
+                <td class="pair-cell">{{item.pair}}</td>
+                <td class="last-price-cell">
+                  {{item.day_high}}
+                  <span class="last-price-base-theme">
+                    / {{mainCtrl.dataService.lastPriceBaseFormatter(item.last_price_base)}}
+                  </span>
+                </td>
                 <td ng-class="item.day_change > 0 ? 'day-change-positive' : 'day-change-negative'">{{mainCtrl.dataService.dayChangeFormatter(item.day_change)}}%</td>
                 <td>{{item.day_high}}</td>
                 <td>{{item.day_low}}</td>
@@ -124,11 +140,99 @@
               </tr>
             </tbody>
           </table>
+          <div class="binance-content-links">
+            <p>Links:</p>
+            <ul>
+              <li><a href="">BABI</a></li>
+              <li><a href="">Sosobtc</a></li>
+              <li><a href="">Coinmarketcap</a></li>
+              <li><a href="">Newsbtc</a></li>
+              <li><a href="">BABI</a></li>
+              <li><a href="">Sosobtc</a></li>
+              <li><a href="">Coinmarketcap</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
-    <footer class="binance-footer binance-cols">
-
+    <footer class="binance-footer">
+      <div class="binance-main-content">
+        <div class="footer-cta-container binance-cols">
+          <div class="footer-cta left-nav">
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Fees</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-cta right-nav">
+            <ul>
+              <li>
+                <a href="mailto:support@binance.zendesk.com">
+                  support@binance.zendesk.com
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-facebook.png" alt="icon-facebook">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-twitter.png" alt="icon-twitter">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-reddit.png" alt="icon-reddit">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-sns-4.png" alt="icon-sns-4">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-qq.png" alt="icon-qq">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-wechat.png" alt="icon-wechat">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/icon-telegram.png" alt="icon-telegram">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note-container binance-cols">
+          <div class="footer-note left-nav">
+            © 2017 Binance.com All rights Reserved
+          </div>
+          <div class="footer-note right-nav">
+            <ul>
+              <li>
+                24h Volume：
+                <span class="highlighted">16,022.80</span> BTC /
+                <span class="highlighted">36,924.77</span> ETH /
+                <span class="highlighted">14,418,513.33</span> USDT</li>
+              <li class="note-time">
+                <span class="highlighted">12017-05-31 15:22:20</span>
+              </li>
+              <li class="note-connect-status">Connected</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>

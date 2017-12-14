@@ -3,6 +3,7 @@ var App = {};
 App.MainCtrl = function($scope, dataService) {
   this.scope = $scope;
   this.items = [];
+  this.favorites = [];
   this.categories = [
     'Favorites',
     'BTC Markets',
@@ -10,7 +11,7 @@ App.MainCtrl = function($scope, dataService) {
     'USDT Markets'
   ];
   this.dataService = dataService;
-  this.selectedCategory = '';
+  this.selectedCategory = 'BTC Markets';
 
   var errorHandler = function(response) {
     console.error(response);
@@ -18,16 +19,25 @@ App.MainCtrl = function($scope, dataService) {
 
   dataService.getData().then(angular.bind(this, function(response) {
     this.items = response.data;
+    console.log(this.items);
   }), errorHandler);
+};
+
+App.MainCtrl.prototype.setFavoriteItem = function(item) {
+  var itemIndex = this.favorites.indexOf(item);
+
+  if (itemIndex > -1) {
+    this.favorites.splice(itemIndex, 1);
+  } else {
+    this.favorites.push(item);
+  }
 };
 
 App.MainCtrl.prototype.setSelectedCategory = function(category) {
   this.selectedCategory = category;
-  // console.log(this.selectedCategory);
 };
 
 App.MainCtrl.prototype.getSelectedCategory = function() {
-  // console.log(this.selectedCategory);
   return this.selectedCategory;
 };
 
@@ -47,7 +57,9 @@ App.DataService = function($http) {
       return $http(getRequest());
     },
     volumeFormatter: function(num) {
-      return new Intl.NumberFormat('en-US').format(num);
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 8
+      }).format(num);
     },
     lastPriceBaseFormatter: function(num) {
       return new Intl.NumberFormat('en-US', {
@@ -61,36 +73,10 @@ App.DataService = function($http) {
   };
 };
 
-App.MainCtrl.categoryItem = function() {
-  return {
-    restrict: 'A',
-    controller: 'MainCtrl',
-    scope: {},
-    link: function(scope, element, attrs, ctrl) {
-      if (attrs.categoryItem === 'BTC Markets') {
-        ctrl.setSelectedCategory('BTC Markets');
-        // ctrl.selectedCategory = 'BTC Markets';
-        // console.log(scope.selectedCategory);
-        element.addClass('binance-theme active');
-      }
-
-      element.on('click', function() {
-        if (ctrl.getSelectedCategory() !== attrs.categoryItem) {
-          // console.log(scope.selectedCategory);
-          ctrl.setSelectedCategory(attrs.categoryItem);
-        }
-
-        scope.$apply();
-      });
-    }
-  };
-};
-
 var ngApp = angular.module('app', [
   'ngRoute',
   'ngAnimate'
 ]);
 
 ngApp.controller('MainCtrl', ['$scope', 'dataService', App.MainCtrl]);
-ngApp.directive('categoryItem', App.MainCtrl.categoryItem);
 ngApp.service('dataService', ['$http', App.DataService]);
