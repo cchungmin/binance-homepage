@@ -19,7 +19,7 @@
   </head>
   <body ng-cloak>
     <header class="binance-header">
-      <a href="" class="binance-logo">
+      <a href="" class="binance-logo binance-header-divsion">
         <img src="images/logo.png" alt="binance-logo-image">
       </a>
       <nav class="binance-cols">
@@ -28,28 +28,37 @@
             <a href="#">Exchange</a>
           </li>
         </ul>
-        <ul class="right-nav navigation">
-          <li>
-            <a href="#">Join us</a>
-          </li>
-          <li>
-            <a href="#">Support</a>
-          </li>
-          <li>
-            <a href="#">News</a>
-          </li>
-          <li>
-            <a href="">Login</a> or
-          </li>
-          <li class="sign-up">
-            <a href="">Rigister</a>
-          </li>
-          <li class="locale">
-            <a href="#">
-              <img src="images/locale.png" alt="locale">
-            </a>
-          </li>
-        </ul>
+        <div class="right-nav navigation">
+          <ul class="left-nav binance-header-divsion">
+            <li class="binance-header-item">
+              <a href="#">Join us</a>
+            </li>
+            <li class="binance-header-item">
+              <a href="#">Support</a>
+            </li>
+            <li class="binance-header-item">
+              <a href="#">News</a>
+            </li>
+          </ul>
+          <ul class="left-nav binance-header-divsion">
+            <li class="binance-header-item">
+              <a href="#">Login</a>
+            </li>
+            <li class="binance-header-or">
+              or
+            </li>
+            <li class="sign-up binance-header-item">
+              <a href="#">Rigister</a>
+            </li>
+          </ul>
+          <ul class="left-nav binance-header-divsion">
+            <li class="locale binance-header-item">
+              <a href="#">
+                <img src="images/locale.png" alt="locale">
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main>
@@ -95,14 +104,69 @@
       <div class="binance-news-panel">
         <div class="binance-main-content">
           <ul class="binance-cols">
-            <li class="news-item"><a href="">Binance Adds DNT/BTC Trading Pair      (10-16)</a></li>
-            <li class="news-item"><a href="">Binance Coin Burn in 2017 Fall      (10-12)</a></li>
-            <li class="news-item"><a href="">SUB Purchases Leaderboard Reward ...       (9-25)</a></li>
+            <li class="news-item">
+              <a href="">Binance Adds DNT/BTC Trading Pair      (10-16)</a>
+            </li>
+            <li class="news-item">
+              <a href="">Binance Coin Burn in 2017 Fall      (10-12)</a>
+            </li>
+            <li class="news-item">
+              <a href="">SUB Purchases Leaderboard Reward ...       (9-25)</a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="binance-exchange-panel">
         <div class="binance-main-content" ng-controller="MainCtrl as mainCtrl">
+          <ul class="exchange-topic-panel binance-cols">
+            <li>
+              <div class="topic-panel-inner">
+                <h4>
+                  <span class="new-decorated">HSR/BTC</span>
+                </h4>
+                <span class="topic-emphasized">0.004400</span>
+                <span>$175.00</span>
+                <p class="topic-panel-volume">Volume: 425,204.85 USDT</p>
+                <span class="topic-panel-percentage day-change-positive">30.00%</span>
+              </div>
+            </li>
+            <li>
+              <div class="topic-panel-inner">
+                <h4>HSR/BTC</h4>
+                <span class="topic-emphasized">0.004400</span>
+                <span>$175.00</span>
+                <p class="topic-panel-volume">Volume: 425,204.85 USDT</p>
+                <span class="topic-panel-percentage day-change-negative">-15.29%</span>
+              </div>
+            </li>
+            <li>
+              <div class="topic-panel-inner">
+                <h4>HSR/BTC</h4>
+                <span class="topic-emphasized">0.004400</span>
+                <span>$175.00</span>
+                <p class="topic-panel-volume">Volume: 425,204.85 USDT</p>
+                <span class="topic-panel-percentage day-change-negative">-5.90%</span>
+              </div>
+            </li>
+            <li>
+              <div class="topic-panel-inner">
+                <h4>HSR/BTC</h4>
+                <span class="topic-emphasized">0.004400</span>
+                <span>$175.00</span>
+                <p class="topic-panel-volume">Volume: 425,204.85 USDT</p>
+                <span class="topic-panel-percentage day-change-positive">20.80%</span>
+              </div>
+            </li>
+            <li>
+              <div class="topic-panel-inner">
+                <h4>HSR/BTC</h4>
+                <span class="topic-emphasized">0.004400</span>
+                <span>$175.00</span>
+                <p class="topic-panel-volume">Volume: 425,204.85 USDT</p>
+                <span class="topic-panel-percentage day-change-positive">6.99%</span>
+              </div>
+            </li>
+          </ul>
           <ul class="exchange-category-panel">
             <li ng-click="mainCtrl.setSelectedCategory(category)" ng-class="mainCtrl.selectedCategory === category ? 'binance-theme active': ''" class="category-item" ng-repeat="category in mainCtrl.categories track by $index">
               {{category}}
@@ -140,17 +204,36 @@
               </tr>
             </tbody>
           </table>
-          <div class="binance-content-links">
-            <p>Links:</p>
-            <ul>
-              <li><a href="">BABI</a></li>
-              <li><a href="">Sosobtc</a></li>
-              <li><a href="">Coinmarketcap</a></li>
-              <li><a href="">Newsbtc</a></li>
-              <li><a href="">BABI</a></li>
-              <li><a href="">Sosobtc</a></li>
-              <li><a href="">Coinmarketcap</a></li>
-            </ul>
+          <div class="binance-content-links binance-cols">
+            <div class="left-nav">
+              <p>Links:</p>
+              <ul>
+                <li>
+                  <a href="#">BABI</a>
+                </li>
+                <li>
+                  <a href="#">Sosobtc</a>
+                </li>
+                <li>
+                  <a href="#">Coinmarketcap</a>
+                </li>
+                <li>
+                  <a href="#">Newsbtc</a>
+                </li>
+                <li>
+                  <a href="#">BABI</a>
+                </li>
+                <li>
+                  <a href="#">Sosobtc</a>
+                </li>
+                <li>
+                  <a href="#">Coinmarketcap</a>
+                </li>
+              </ul>
+            </div>
+            <div class="right-nav">
+              <a class="binance-download" href="#" value="Download">Download</a>
+            </div>
           </div>
         </div>
       </div>
@@ -160,53 +243,67 @@
         <div class="footer-cta-container binance-cols">
           <div class="footer-cta left-nav">
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Fees</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">API</a></li>
-              <li><a href="#">Careers</a></li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Terms</a>
+              </li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Fees</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">API</a>
+              </li>
+              <li>
+                <a href="#">Careers</a>
+              </li>
             </ul>
           </div>
           <div class="footer-cta right-nav">
             <ul>
-              <li>
+              <li class="icon-sns">
                 <a href="mailto:support@binance.zendesk.com">
                   support@binance.zendesk.com
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-facebook.png" alt="icon-facebook">
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-twitter.png" alt="icon-twitter">
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-reddit.png" alt="icon-reddit">
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-sns-4.png" alt="icon-sns-4">
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-qq.png" alt="icon-qq">
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-wechat.png" alt="icon-wechat">
                 </a>
               </li>
-              <li>
+              <li class="icon-sns">
                 <a href="#">
                   <img src="images/icon-telegram.png" alt="icon-telegram">
                 </a>

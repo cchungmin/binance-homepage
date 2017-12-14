@@ -74,6 +74,23 @@ img {
   color: #b1b1b1;
 }
 
+.left-nav.binance-header-divsion .binance-header-or {
+  padding: 15px 0;
+}
+
+.navigation .left-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.left-nav.binance-header-divsion .binance-header-item {
+  padding: 15px 8px;
+}
+
+.binance-header-divsion {
+  border-right: 1px solid #5b5b5b;
+}
+
 .binance-promo {
   text-align: center;
 }
@@ -82,6 +99,7 @@ img {
   color: #999999;
   margin: 0;
   padding: 0;
+  margin-bottom: 40px;
 }
 
 .binance-promo .promo-signup li {
@@ -105,10 +123,74 @@ img {
   background-color: #262626;
 }
 
+.binance-news-panel .binance-main-content {
+  padding: 0 20px;
+}
+
 .binance-news-panel .news-item {
   float: left;
   display: inline-block;
   width: 33.3%;
+}
+
+.exchange-topic-panel {
+  margin: 0;
+  padding: 0;
+}
+
+.topic-panel-inner {
+  line-height: 0.4;
+  position: relative;
+}
+
+.topic-panel-percentage {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.exchange-topic-panel li {
+  float: left;
+  display: inline-block;
+  width: 16.7%;
+  margin: 0 1.4881% 20px;
+}
+
+.exchange-topic-panel li:first-child .new-decorated {
+  position: relative;
+}
+
+.exchange-topic-panel li:first-child .new-decorated:after {
+  content: 'NEW';
+  background-color: #e8b342;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 4px;
+  margin-left: 6px;
+  top: 0;
+  padding: 1px 2px;
+  position: absolute;
+  line-height: initial;
+}
+
+.exchange-topic-panel li:first-child .new-decorated:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #e8b342;
+  right: -8px;
+  top: 2px;
+  position: absolute;
+}
+
+.topic-emphasized {
+  font-weight: 600;
+}
+
+.topic-panel-volume {
+  color: #666;
 }
 
 .exchange-category-panel {
@@ -254,13 +336,36 @@ td.last-price-cell {
   padding: 0 10px;
 }
 
-.footer-note {
-  display: inline-block;
-  color: #999999;
-}
-
 .binance-content-links {
   padding-top: 30px;
+}
+
+.binance-content-links .right-nav {
+  position: relative;
+}
+
+.binance-download {
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  border: 1px solid #999999;
+  padding: 9px 15px 9px 35px;
+  color: #999999;
+  border-radius: 3px;
+}
+
+.binance-download:hover {
+  filter: brightness(80%);
+}
+
+.binance-download:before {
+  background-image: url(../images/icon-download.png);
+  position: absolute;
+  content: '';
+  width: 14px;
+  height: 14px;
+  left: 16px;
+  top: 9px;
 }
 
 .binance-footer ul,
@@ -270,8 +375,21 @@ td.last-price-cell {
 }
 
 .binance-footer ul {
-  border-bottom: 1px solid #39393b;
   padding-bottom: 10px;
+}
+
+.binance-footer .binance-main-content {
+  position: relative;
+}
+
+.binance-footer .binance-main-content:after {
+  position: absolute;
+  content: '';
+  background-image: url(../images/icon-desktop.png);
+  width: 231px;
+  height: 86px;
+  right: 12%;
+  top: -64px;
 }
 
 .binance-footer ul li,
@@ -289,8 +407,33 @@ td.last-price-cell {
   font-weight: 600;
 }
 
+.footer-cta.right-nav ul li:first-child {
+  padding-right: 20px;
+}
+
+.footer-cta.right-nav ul li {
+  padding: 0 4px;
+}
+
+.footer-note {
+  display: inline-block;
+  color: #999999;
+}
+
+.footer-note.right-nav ul li {
+  padding-right: 20px;
+}
+
+.footer-cta-container {
+  border-bottom: 1px solid #39393b;
+}
+
 .footer-note-container {
   padding: 10px 0;
+}
+
+.icon-sns a:hover {
+  color: #fff;
 }
 
 .note-time {
