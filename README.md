@@ -1,8 +1,7 @@
 # binance-homepage
 
 ## Project Brief
-This project is written for Binance, Check [more](/NOTE.md) here.
-This project used some gulp settings sparked from with [Web Starter Kit](https://github.com/google/web-starter-kit).
+This project is written for Binance, using some gulp settings sparked from with [Web Starter Kit](https://github.com/google/web-starter-kit).
 Below you will find some information on how to perform common tasks.<br>
 
 ## Contribution
@@ -38,8 +37,6 @@ You can also serve produciton files by typing:
 ```
 gulp serve:dist
 ```
-
-The API serve is considered as a server different from the server used here, so CORS setting is applied for API server.
 
 
 ## Trade-offs
