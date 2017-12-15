@@ -124,6 +124,18 @@ gulp.task('html', () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('json', () => {
+  return gulp.src('src/**/*.json')
+    .pipe($.useref({
+      searchPath: '{.tmp,app}',
+      noAssets: true
+    }))
+
+    // Output files
+    .pipe($.if('*.json', $.size({title: 'json', showFiles: true})))
+    .pipe(gulp.dest('dist'));
+});
+
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
@@ -169,7 +181,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'json', 'scripts', 'images', 'copy'],
     cb
   )
 );
