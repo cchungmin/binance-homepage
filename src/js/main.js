@@ -19,7 +19,6 @@ App.MainCtrl = function($scope, dataService) {
 
   dataService.getData().then(angular.bind(this, function(response) {
     this.items = response.data;
-    console.log(this.items);
   }), errorHandler);
 };
 
